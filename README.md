@@ -23,6 +23,7 @@
   ```nvidia-smi ```
   - Make sure shows like this:
   <div align="center"> <img src="asset/nvidia-smi.png"> </div>
+  
   - Adding PATH and Test CUDA DRIVER
   ```bash
   export PATH=/usr/local/cuda-10.2/bin:/usr/local/cuda-10.2/NsightCompute-2019.1${PATH:+:${PATH}}
@@ -32,7 +33,7 @@
 
   - Install Cuda-Tollkit by ```sudo apt install nvidia-cuda-toolkit``` and check by ```nvcc -V``` <img src="asset/nvcc.png"> </div>
   - Verify CUDA by run ``` ./bandwidth ``` and ``` ./deviceQuery``` on ```/usr/local/cuda-10.0/samples/bin/x86_64/linux/release ``` after run this:
-  ``` bash
+  ```bash
   cd ~/
   apt-get install cuda-samples-7-0 -y
   cd /usr/local/cuda-7.0/samples
