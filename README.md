@@ -19,9 +19,7 @@
     * sudo apt-get update
     * sudo apt-get -y install cuda-drivers
     ```
-  -Check NVIDIA driver is succesfully installed:
-  ```nvidia-smi ```
-  - Make sure shows like this:
+  - Check NVIDIA driver is succesfully installed by ```nvidia-smi ``` and make sure shows like this:
   <div align="center"> <img src="asset/nvidia-smi.png"> </div>
 
   - Adding PATH and Test CUDA DRIVER
@@ -74,10 +72,25 @@
   - Check NVIDIA-Docker Instalation by: ```docker run --gpus all nvidia/cuda:10.0-base nvidia-smi ```
 
 5. **BUILD EXAMPLES DOCKER**
-  - OPENPOSE
+  - OPENPOSE[4]
+
+      ```bash
+      docker pull cwaffles/OPENPOSE
+      sudo docker run -it --rm --gpus all -e NVIDIA_VISIBLE_DEVICES=0 cwaffles/openpose
+      ```
+
   - ST-GCN
+
+    ```bash
+    git clone https://github.com/ajisetyoko/docker_gcn_private.git
+    cd docker_gcn_private/
+    sudo docker build -t gcn_docker .
+    sudo docker run -it --rm --gpus all -e NVIDIA_VISIBLE_DEVICES=0 gcn_docker
+    ```
+
 
 ## REFERENCES
 [1] NVIDIA DATA CENTER LIBRARIES [https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html]
 [2] Install Docker [https://computingforgeeks.com/how-to-install-docker-on-ubuntu/]
 [3] NVIDIA-DOCKER [https://github.com/NVIDIA/nvidia-docker#quickstart]
+[4] OPENPOSE DOCKER [https://hub.docker.com/r/cwaffles/openpose]
