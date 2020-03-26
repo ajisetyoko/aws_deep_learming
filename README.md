@@ -90,7 +90,7 @@
 
 
 ## REFERENCES
-[1] NVIDIA DATA CENTER LIBRARIES [https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html]
-[2] Install Docker [https://computingforgeeks.com/how-to-install-docker-on-ubuntu/]
-[3] NVIDIA-DOCKER [https://github.com/NVIDIA/nvidia-docker#quickstart]
-[4] OPENPOSE DOCKER [https://hub.docker.com/r/cwaffles/openpose]
+[1] NVIDIA DATA CENTER LIBRARIES [https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html]   
+[2] Install Docker [https://computingforgeeks.com/how-to-install-docker-on-ubuntu/]   
+[3] NVIDIA-DOCKER [https://github.com/NVIDIA/nvidia-docker#quickstart]    
+[4] OPENPOSE DOCKER [https://hub.docker.com/r/cwaffles/openpose]    
