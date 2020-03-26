@@ -27,7 +27,8 @@
   ```bash
   export PATH=/usr/local/cuda-10.2/bin:/usr/local/cuda-10.2/NsightCompute-2019.1${PATH:+:${PATH}}
   export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-  export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}```
+  export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+  ```
 
   - Install Cuda-Tollkit by ```sudo apt install nvidia-cuda-toolkit``` and check by ```nvcc -V``` <img src="asset/nvcc.png"> </div>
   - Verify CUDA by run ``` ./bandwidth ``` and ``` ./deviceQuery``` on ```/usr/local/cuda-10.0/samples/bin/x86_64/linux/release ``` after run this:
@@ -35,7 +36,8 @@
   cd ~/
   apt-get install cuda-samples-7-0 -y
   cd /usr/local/cuda-7.0/samples
-  make```
+  make
+  ```
   - Make sure the result of ``` ./bandwidth ``` and ``` ./deviceQuery``` is PASS
 
 4. **SETTING DOCKER ENVIRONMENT**
