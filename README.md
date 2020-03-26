@@ -7,7 +7,7 @@
     - Memory Size |
 2. **Connecting to AWS**
 3. **SETTING HOST ENVIRONMENT**     
-  - INSTALL GENERAL LIBRARIES : You can skip this, but IDK it would be work or not.
+  - INSTALL GENERAL LIBRARIES : *You can skip this, but IDK it would be work or not.*
   - INSTALL NVIDIA DRIVER [1] :
     ```bash
     * sudo apt-get install linux-headers-$(uname -r)
@@ -23,7 +23,7 @@
   ```nvidia-smi ```
   - Make sure shows like this:
   <div align="center"> <img src="asset/nvidia-smi.png"> </div>
-  
+
   - Adding PATH and Test CUDA DRIVER
   ```bash
   export PATH=/usr/local/cuda-10.2/bin:/usr/local/cuda-10.2/NsightCompute-2019.1${PATH:+:${PATH}}
@@ -42,6 +42,36 @@
   - Make sure the result of ``` ./bandwidth ``` and ``` ./deviceQuery``` is PASS
 
 4. **SETTING DOCKER ENVIRONMENT**
+  - DOCKER INSTALLATION   
+
+  ``` bash
+  * sudo apt -y update
+  * sudo apt -y install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+  * sudo apt remove docker docker-engine docker.io containerd runc
+  * curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  * sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+  * sudo apt update
+  * sudo apt -y install docker-ce docker-ce-cli containerd.io
+  * sudo usermod -aG docker $USER
+  * newgrp docker
+  * docker version
+  ```
+
+  - The output should be like: <div align="center"> <img src="asset/docker-version.png"> </div>
+
+  - Install NVIDIA-DOCKER [3]:
+
+    ```bash
+    # Add the package repositories
+    distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+    curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+    curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+
+    sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
+    sudo systemctl restart docker
+    ```
+
+  - Check NVIDIA-Docker Instalation by: ```docker run --gpus all nvidia/cuda:10.0-base nvidia-smi ```
 
 5. **BUILD EXAMPLES DOCKER**
   - OPENPOSE
@@ -49,4 +79,5 @@
 
 ## REFERENCES
 [1] NVIDIA DATA CENTER LIBRARIES [https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html]
-[2]
+[2] Install Docker [https://computingforgeeks.com/how-to-install-docker-on-ubuntu/]
+[3] NVIDIA-DOCKER [https://github.com/NVIDIA/nvidia-docker#quickstart]
