@@ -2,12 +2,19 @@
 ## Set Enviroment
 1. **AWS Instances**    
     Description:
-    - OS Type |
-    - Instances Type|
-    - Memory Size |
+    - OS Type Linux 16.04
+    - Instances Type : g4dn.2xlarge
+    - Memory Size : sda0 = 200GiB
 2. **Connecting to AWS**
 3. **SETTING HOST ENVIRONMENT**     
   - INSTALL GENERAL LIBRARIES : *You can skip this, but IDK it would be work or not.*
+
+  ```bash
+  sudo add-apt-repository ppa:graphics-drivers/ppa
+  sudo apt update
+  sudo apt-get install dkms
+  ```
+
   - INSTALL NVIDIA DRIVER [1] :
     ```bash
     * sudo apt-get install linux-headers-$(uname -r)
@@ -71,7 +78,7 @@
 
   - Check NVIDIA-Docker Instalation by: ```docker run --gpus all nvidia/cuda:10.0-base nvidia-smi ```
 
-5. **BUILD EXAMPLES DOCKER**
+## **BUILD EXAMPLES DOCKER**
   - OPENPOSE[4]
 
       ```bash
