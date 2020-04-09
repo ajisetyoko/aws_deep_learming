@@ -82,7 +82,7 @@
   - OPENPOSE[4]
 
       ```bash
-      docker pull cwaffles/OPENPOSE
+      docker pull cwaffles/openpose
       sudo docker run -it --rm --gpus all -e NVIDIA_VISIBLE_DEVICES=0 cwaffles/openpose
       ```
 
@@ -95,9 +95,18 @@
     sudo docker run -it --rm --gpus all -e NVIDIA_VISIBLE_DEVICES=0 gcn_docker
     ```
 
+## **Basic docker operation**
+  - List images on host   : ``` sudo docker images -a ```
+  - Kill docker by id     : ``` sudo docker kill [container id] ```
+  - List active container : ``` docker container ls -a```
+  - Link a folder outside : ``` -v ~/local_host:/docker_location/ ``` # example u want to link desktop folder to become Documents in Docker. ``` sudo docker run -v ~/Dekstop:/Documents/  -it --rm --gpus all -e NVIDIA_VISIBLE_DEVICES=0 gcn_docker  ```
+  - Link 
+
 
 ## REFERENCES
-[1] NVIDIA DATA CENTER LIBRARIES [https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html]   
-[2] Install Docker [https://computingforgeeks.com/how-to-install-docker-on-ubuntu/]   
-[3] NVIDIA-DOCKER [https://github.com/NVIDIA/nvidia-docker#quickstart]    
-[4] OPENPOSE DOCKER [https://hub.docker.com/r/cwaffles/openpose]    
+[1] [NVIDIA DATA CENTER LIBRARIES](https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html)   
+[2] [Install Docker](https://computingforgeeks.com/how-to-install-docker-on-ubuntu/)   
+[3] [NVIDIA-DOCKER](https://github.com/NVIDIA/nvidia-docker#quickstart)    
+[4] [OPENPOSE DOCKER](https://hub.docker.com/r/cwaffles/openpose)    
+
+#### COPYRIGHTS simslab@NTUST 2020
